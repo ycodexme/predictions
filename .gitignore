@@ -1,0 +1,45 @@
+# Virtual Environment
+venv/
+env/
+.env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fichiers temporaires générés localement
+football_predictions_*.json
+football_predictions_*.html
+!dist/index.html
+
+# Logs
+*.log
+
+# Système
+.DS_Store
+Thumbs.db 

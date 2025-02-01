@@ -1,0 +1,10 @@
+
+[build]
+  publish = "dist"
+  command = "python build.py"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+    
