@@ -1,11 +1,16 @@
 import asyncio
 import os
+import subprocess
 from datetime import datetime
 from test import main as scrape_main
 
 async def build():
     # Créer le dossier dist s'il n'existe pas
     os.makedirs('dist', exist_ok=True)
+    
+    # Installer les navigateurs Playwright
+    print("Installing Playwright browsers...")
+    subprocess.run(["playwright", "install", "chromium"], check=True)
     
     # Lancer le scraping
     await scrape_main()
