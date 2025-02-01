@@ -32,9 +32,7 @@ wheels/
 *.swp
 *.swo
 
-# Fichiers temporaires générés localement
-football_predictions_*.json
-football_predictions_*.html
+
 !dist/index.html
 
 # Logs
