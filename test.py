@@ -17,7 +17,11 @@ async def scrape_predictions(crawler, base_url, prediction_type):
             exclude_external_links=True,
             process_iframes=True,
             remove_overlay_elements=True,
-            cache_mode=CacheMode.ENABLED
+            cache_mode=CacheMode.ENABLED,
+            browser_args={
+                'headless': True,
+                'args': ['--no-sandbox', '--disable-setuid-sandbox']
+            }
         )
     )
     

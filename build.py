@@ -10,7 +10,11 @@ async def build():
     
     # Installer les navigateurs Playwright
     print("Installing Playwright browsers...")
-    subprocess.run(["playwright", "install", "chromium"], check=True)
+    subprocess.run(["playwright", "install", "chromium", "--with-deps"], check=True)
+    
+    # Définir les variables d'environnement pour le mode headless
+    os.environ["PLAYWRIGHT_CHROMIUM_EXECUTABLE"] = ""
+    os.environ["PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD"] = "1"
     
     # Lancer le scraping
     await scrape_main()
