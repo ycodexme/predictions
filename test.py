@@ -34,7 +34,18 @@ async def scrape_predictions(crawler, base_url, prediction_type):
     return result
 
 async def main():
-    browser_config = BrowserConfig(verbose=True)
+    browser_config = BrowserConfig(
+        verbose=True,
+        browser_args={
+            'headless': True,
+            'args': [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--single-process'
+            ]
+        }
+    )
     json_handler = CrawlResultHandler()
     html_handler = HtmlResultHandler()
 
