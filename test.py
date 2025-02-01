@@ -18,7 +18,7 @@ async def scrape_predictions(crawler, base_url, prediction_type):
             process_iframes=True,
             remove_overlay_elements=True,
             cache_mode=CacheMode.ENABLED,
-            browser_args={
+            launch_options={
                 'headless': True,
                 'args': ['--no-sandbox', '--disable-setuid-sandbox']
             }
@@ -36,7 +36,7 @@ async def scrape_predictions(crawler, base_url, prediction_type):
 async def main():
     browser_config = BrowserConfig(
         verbose=True,
-        browser_args={
+        launch_options={
             'headless': True,
             'args': [
                 '--no-sandbox',
